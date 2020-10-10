@@ -13,11 +13,11 @@ function App() {
     <GlobalContextProvider>
       <div className="container grid lg:grid-cols-2 gap-5 mx-auto border border-black">
         
-        <div className="col-span-2 mx-auto mt-5">
+        <div className="col-span-2 border-black border-double border-b-4 mx-auto mt-5">
          <Title></Title>
         </div>
         
-        <div className="col-span-2 lg:col-span-1 border-green-500 border-4 flex justify-center items-center flex-col">
+        <div className="col-span-2 lg:col-span-1  flex justify-center items-center flex-col">
             <Balance></Balance>
             <IncomeExpense></IncomeExpense>
             <AddTransaction></AddTransaction>

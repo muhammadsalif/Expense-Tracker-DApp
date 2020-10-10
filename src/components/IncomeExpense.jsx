@@ -2,7 +2,7 @@ import React from "react";
 
 export default function IncomeExpense() {
   return (
-    <div className="flex justify-around border-4 border-red-500 items-center w-full flex-col lg:flex-row py-5">
+    <div className="flex justify-around items-center w-full flex-col lg:flex-row py-5">
       {/*Income div  */}
       <div className="flex flex-row px-8 bg-teal-200 py-5 lg:mb-0 border-double border-4 border-green-700 my-2 lg:my-0">
         <h1 className="text-4xl">Income</h1>

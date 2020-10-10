@@ -3,7 +3,7 @@ import React from "react";
 export default function AddTransaction() {
   return (
     <>
-      <h1 className="pl-4 text-2xl w-full border-b-4 border-double border-current">
+      <h1 className="pl-4 text-2xl w-full border-b-4 border-double border-gray-500 pb-1 font-bold text-2xl">
         Add New Transaction
       </h1>
       <form className="px-2 w-full">
