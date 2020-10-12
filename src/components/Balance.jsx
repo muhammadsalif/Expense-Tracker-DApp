@@ -1,13 +1,19 @@
-import React from "react";
+import React, { useContext } from "react";
+import { GlobalContext } from "../context/GlobalContext";
 
 export default function Balance() {
+  let val = useContext(GlobalContext);
+
+  // Using reduce function to iterate on array and getting a sum
+  let bal = val.reduce((initialVal, currentVal) => {
+    return initialVal + currentVal.transAmount;
+  }, 0);
+
   return (
-    <div className="flex justify-around w-full text-4xl ">
-      <h1 className="border-b-4 font-bold text-orange-700 border-double border-gray-500 ">
-        Your Balance
-      </h1>
+    <div className="flex justify-around items-center w-full text-4xl border-b-4  border-double border-gray-500 pb-2">
+      <h1 className="font-bold text-orange-700 ">Your Balance</h1>
       <p className="font-serif border-4 border-double border-orange-300 px-8 rounded-full ">
-        $500
+        ${bal}
       </p>
     </div>
   );
