@@ -9,9 +9,12 @@ export default function TransactionHistory() {
         Transactions History
       </h1>
       <ul className="flex justify-between items-center flex-col">
-        {initialTransaction.map((trans) => {
+        {initialTransaction.map((trans, ind) => {
           return (
-            <li className="flex items-center justify-around w-full lg:w-3/4 mx-auto bg-yellow-200 py-3 border-double border-4 border-green-700 my-2">
+            <li
+              key={ind}
+              className="flex items-center justify-around w-full lg:w-3/4 mx-auto bg-yellow-200 py-3 border-double border-4 border-green-700 my-2"
+            >
               <h1 className="text-3xl text-green-700 font-bold">
                 {trans.transDescription}
               </h1>

@@ -4,6 +4,7 @@ export const GlobalContext = createContext("Default");
 
 let initialTransaction = [
   { transDescription: "Salary", transAmount: 500 },
+  { transDescription: "abc", transAmount: 500 },
   { transDescription: "rent", transAmount: -200 },
   { transDescription: "movie", transAmount: -50 },
 ];
