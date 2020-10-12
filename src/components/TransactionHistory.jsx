@@ -7,7 +7,7 @@ export default function TransactionHistory() {
         Transactions History
       </h1>
       <ul className="flex justify-between items-center flex-col">
-        <li className="flex items-center justify-around w-3/4 mx-auto bg-yellow-200 py-3 border-double border-4 border-green-700 my-2">
+        <li className="flex items-center justify-around w-full lg:w-3/4 mx-auto bg-yellow-200 py-3 border-double border-4 border-green-700 my-2">
           <h1 className="text-3xl text-green-700 font-bold">Salary</h1>
           <p className="text-3xl font-serif text-green-700 font-bold border-green-500 border-4 rounded-full px-6">
             $500
@@ -16,7 +16,7 @@ export default function TransactionHistory() {
             X
           </button>
         </li>
-        <li className="flex items-center justify-around w-3/4 mx-auto bg-yellow-200 py-3 border-double border-4 border-red-700 my-2">
+        <li className="flex items-center justify-around w-full lg:w-3/4 mx-auto bg-yellow-200 py-3 border-double border-4 border-red-700 my-2">
           <h1 className="text-3xl text-red-700 font-bold">Rent</h1>
           <p className="text-3xl font-serif text-red-700 font-bold border-red-500 border-4 rounded-full px-6">
             $200
@@ -26,7 +26,7 @@ export default function TransactionHistory() {
           </button>
         </li>
 
-        <li className="flex items-center justify-around w-3/4 mx-auto bg-yellow-200 py-3 border-double border-4 border-red-700 my-2">
+        <li className="flex items-center justify-around w-full lg:w-3/4 mx-auto bg-yellow-200 py-3 border-double border-4 border-red-700 my-2">
           <h1 className="text-3xl text-red-700 font-bold">Movie</h1>
           <p className="text-3xl font-serif text-red-700 font-bold border-red-500 border-4 rounded-full px-6">
             $50
