@@ -1,11 +1,10 @@
 import React, { createContext } from "react";
 
-export const GlobalContext = createContext("Default");
+export const GlobalContext = createContext([]);
 
 let initialTransaction = [
   { transDescription: "Salary", transAmount: 500 },
   { transDescription: "abc", transAmount: 500 },
-  { transDescription: "rent", transAmount: -200 },
   { transDescription: "movie", transAmount: -50 },
 ];
 
