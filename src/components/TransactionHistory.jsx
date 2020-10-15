@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { GlobalContext } from "./../context/GlobalContext";
 export default function TransactionHistory() {
-  let initialTransaction = useContext(GlobalContext);
+  let { initialTransaction } = useContext(GlobalContext);
 
   return (
     <>
@@ -13,12 +13,24 @@ export default function TransactionHistory() {
           return (
             <li
               key={ind}
-              className="flex items-center justify-around w-full lg:w-3/4 mx-auto bg-yellow-200 py-3 border-double border-4 border-green-700 my-2"
+              className={`flex items-center justify-around w-full lg:w-3/4 mx-auto bg-yellow-200 py-3 border-double border-4 ${
+                trans.transAmount > 0 ? "border-green-700" : "border-red-700"
+              } my-2`}
             >
-              <h1 className="text-3xl text-green-700 font-bold">
+              <h1
+                className={`capitalize text-3xl ${
+                  trans.transAmount > 0 ? "text-green-700" : "text-red-700"
+                } font-bold`}
+              >
                 {trans.transDescription}
               </h1>
-              <p className="text-3xl font-serif text-green-700 font-bold border-green-500 border-4 rounded-full px-6">
+              <p
+                className={`text-3xl font-serif font-bold ${
+                  trans.transAmount > 0
+                    ? "text-green-700 border-green-500"
+                    : "text-red-700 border-red-500"
+                }  border-4 rounded-full px-6`}
+              >
                 {trans.transAmount}
               </p>
               <button className="border-black border-double border-4 px-6 text-2xl bg-orange-200 hover:bg-orange-400 text-gray-900 font-bold rounded">

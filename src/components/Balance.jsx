@@ -2,10 +2,10 @@ import React, { useContext } from "react";
 import { GlobalContext } from "../context/GlobalContext";
 
 export default function Balance() {
-  let val = useContext(GlobalContext);
+  let { initialTransaction } = useContext(GlobalContext);
 
   // Using reduce function to iterate on array and getting a sum
-  let bal = val.reduce((initialVal, currentVal) => {
+  let bal = initialTransaction.reduce((initialVal, currentVal) => {
     return initialVal + currentVal.transAmount;
   }, 0);
 

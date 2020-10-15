@@ -3,23 +3,23 @@ import { GlobalContext } from "./../context/GlobalContext";
 import { GlobalReducer } from "./../reducer/GlobalReducer";
 
 export default function AddTransaction() {
-  let initialTransaction = useContext(GlobalContext);
-  let [state, dispatch] = useReducer(GlobalReducer, initialTransaction);
+  let { dispatch } = useContext(GlobalContext);
 
   let [amount, setAmount] = useState(0);
   let [des, setDescription] = useState("");
 
   function handleSubmit(e) {
     e.preventDefault();
-    // console.log(amount);
-    // console.log(des);
     dispatch({
       type: "ADD_TRANSACTION",
       data: {
         transDescription: des,
+        // Changing transamout to number property
         transAmount: +amount,
       },
     });
+    setAmount(0);
+    setDescription("");
   }
 
   return (
@@ -37,7 +37,7 @@ export default function AddTransaction() {
             name="description"
             type="text"
             required
-            className="rounded w-full px-3 py-2 border border-gray-500 placeholder-gray-500 text-black-500"
+            className="rounded w-full px-3 py-2 border border-gray-500 placeholder-gray-500 text-black-500 capitalize"
             placeholder={des}
             value={des}
             onChange={(e) => {
@@ -55,6 +55,7 @@ export default function AddTransaction() {
             type="text"
             required
             className="rounded w-full px-3 py-2 border border-gray-500 placeholder-gray-500 text-black-500"
+            value={amount}
             placeholder={amount}
             onChange={(e) => {
               setAmount(e.target.value);

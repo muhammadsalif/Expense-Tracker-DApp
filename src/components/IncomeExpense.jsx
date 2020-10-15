@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import { GlobalContext } from "./../context/GlobalContext";
 
 export default function IncomeExpense() {
-  let initialTransaction = useContext(GlobalContext);
+  let { initialTransaction } = useContext(GlobalContext);
 
   // Income logic and algo's
   //Filtering positive value from the array to find the income
