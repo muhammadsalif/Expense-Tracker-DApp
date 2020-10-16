@@ -1,21 +1,22 @@
-import React, { useContext, useReducer, useState } from "react";
+import React, { useContext, useState } from "react";
 import { GlobalContext } from "./../context/GlobalContext";
-import { GlobalReducer } from "./../reducer/GlobalReducer";
 
 export default function AddTransaction() {
   let { dispatch } = useContext(GlobalContext);
 
   let [amount, setAmount] = useState(0);
   let [des, setDescription] = useState("");
-
+  let [id, setId] = useState(1);
   function handleSubmit(e) {
     e.preventDefault();
+    setId(id + 1);
     dispatch({
       type: "ADD_TRANSACTION",
       data: {
         transDescription: des,
         // Changing transamout to number property
         transAmount: +amount,
+        transId: id,
       },
     });
     setAmount(0);

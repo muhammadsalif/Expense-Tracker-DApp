@@ -1,8 +1,7 @@
 import React, { useContext } from "react";
 import { GlobalContext } from "./../context/GlobalContext";
 export default function TransactionHistory() {
-  let { initialTransaction } = useContext(GlobalContext);
-
+  let { initialTransaction, dispatch } = useContext(GlobalContext);
   return (
     <>
       <h1 className="border-b-4 font-bold text-orange-700 border-double border-gray-500 text-4xl">
@@ -33,7 +32,17 @@ export default function TransactionHistory() {
               >
                 {trans.transAmount}
               </p>
-              <button className="border-black border-double border-4 px-6 text-2xl bg-orange-200 hover:bg-orange-400 text-gray-900 font-bold rounded">
+              <button
+                className="border-black border-double border-4 px-6 text-2xl bg-orange-200 hover:bg-orange-400 text-gray-900 font-bold rounded"
+                onClick={() => {
+                  dispatch({
+                    type: "DEL_TRANSACTION",
+                    data: {
+                      transId: trans.transId,
+                    },
+                  });
+                }}
+              >
                 X
               </button>
             </li>
